@@ -20,11 +20,10 @@ export default (queries, type, resource, params) => {
         return {
             query: queries[resource][GET_LIST],
             variables: {
-                filter: JSON.stringify(params.filter),
-                page: params.pagination.page - 1,
-                perPage: params.pagination.perPage,
-                sortField: params.sort.field,
-                sortOrder: params.sort.order,
+                filter: params.filter,
+                skip: (params.pagination.page - 1) * params.pagination.perPage,
+                first: Number(params.pagination.perPage),
+                orderBy: `${params.sort.field}_${params.sort.order}`
             },
         };
     }
@@ -76,13 +75,13 @@ export default (queries, type, resource, params) => {
     case UPDATE:
         return {
             mutation: queries[resource][UPDATE],
-            variables: { data: JSON.stringify(params.data) },
+            variables: params.data,
         };
 
     case CREATE:
         return {
             mutation: queries[resource][CREATE],
-            variables: { data: JSON.stringify(params.data) },
+            variables: params.data,
         };
 
     case DELETE:
