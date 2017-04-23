@@ -1,6 +1,6 @@
 {
   "name": "aor-graph-cool-client",
-  "version": "0.1.10",
+  "version": "0.1.12",
   "description": "A graph.cool client for admin-on-rest",
   "main": "./lib/index.js",
   "repository": "https://github.com/mulyoved/aor-simple-graphql-client.git",

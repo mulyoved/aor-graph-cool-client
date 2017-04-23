@@ -19,3 +19,11 @@ or
 ```sh
 yarn add aor-graph-cool-client 
 ```
+
+
+# Publish
+Don't use yarn, for some reason didn't work for me
+
+```sh
+npm publish
+```
