@@ -1,11 +1,15 @@
 {
   "name": "aor-graph-cool-client",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "A graph.cool client for admin-on-rest",
   "main": "./lib/index.js",
   "repository": "https://github.com/mulyoved/aor-simple-graphql-client.git",
   "author": "Gildas Garcia",
   "license": "MIT",
+  "files": [
+    "*.md",
+    "lib"
+  ],
   "scripts": {
     "build": "rm -rf lib && cross-env NODE_ENV=production ./node_modules/.bin/babel --out-dir=lib --stage=0 --ignore=*.spec.js src",
     "clean": "make clean",
