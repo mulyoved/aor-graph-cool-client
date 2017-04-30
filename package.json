@@ -1,8 +1,8 @@
 {
   "name": "aor-graph-cool-client",
-  "version": "0.1.12",
+  "version": "0.1.16",
   "description": "A graph.cool client for admin-on-rest",
-  "main": "./lib/index.js",
+  "main": "lib/index.js",
   "repository": "https://github.com/mulyoved/aor-simple-graphql-client.git",
   "author": "Gildas Garcia",
   "license": "MIT",

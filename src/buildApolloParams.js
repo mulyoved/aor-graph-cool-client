@@ -37,8 +37,9 @@ export default (queries, type, resource, params) => {
         };
 
     case GET_MANY: {
+        //console.log("aor-dc - buildApolloParams", params);
         let variables = {
-            filter: JSON.stringify({ ids: params.ids }),
+            filter: { id_in: params.ids },
         };
 
         if (!queries[resource][GET_MANY]) {
@@ -56,7 +57,7 @@ export default (queries, type, resource, params) => {
 
     case GET_MANY_REFERENCE: {
         let variables = {
-            filter: JSON.stringify({ [params.target]: params.id }),
+            filter: { [params.target]: params.id },
         };
 
         if (!queries[resource][GET_MANY_REFERENCE]) {
