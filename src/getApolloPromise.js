@@ -20,6 +20,7 @@ export default client =>
         }
 
         if (MUTATION_TYPES.includes(type)) {
+          console.log('aor-gc mutate', type, apolloParams);
             return client.mutate(apolloParams);
         }
 

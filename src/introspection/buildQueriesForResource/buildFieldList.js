@@ -31,7 +31,16 @@ const getFieldName = field => {
 };
 
 const relationship = type =>
-  type.kind === "OBJECT" || (type.ofType && relationship(type.ofType));
+  type.kind === "OBJECT" || type.kind === "INPUT_OBJECT" || (type.ofType && relationship(type.ofType));
+
+
+//Filter productId fields from create and Update
+const isRealtionshipIdField = field => {
+  return field.type.kind === "SCALAR" &&
+    field.type.name === "ID" &&
+    field.name.indexOf('Id') === field.name.length &&
+    field.name !== "Id"
+};
 
 const scalar = field => !relationship(field.type);
 
@@ -69,10 +78,11 @@ export default (resource, type, { excludeFields }) => {
     .map(f => `${f.name}: \$${f.name}`)
     .join(" ");
   console.log(
-    "AOR DBG - buildFieldList",
-    fields,
-    fieldsAsParam,
-    fieldsAsValues
+    "AOR DBG - buildFieldList",{
+      fields,
+      fieldsAsParam,
+      fieldsAsValues
+    }
   );
 
   return { fields, fieldsAsParam, fieldsAsValues };
