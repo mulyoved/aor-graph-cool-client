@@ -1,4 +1,4 @@
-## Deprecated - use oriinal repository GraphQL flavor feature
+## Deprecated - use the original repository GraphQL flavor feature instead of this fork
 
 # aor-graph-cool-client
  
