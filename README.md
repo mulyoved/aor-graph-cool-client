@@ -1,3 +1,5 @@
+## Deprecated - use oriinal repository GraphQL flavor feature
+
 # aor-graph-cool-client
  
 based on 
